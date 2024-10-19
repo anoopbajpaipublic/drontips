@@ -1,3 +1,5 @@
+import 'package:drontips/screens/login_screen.dart';
+import 'package:drontips/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -31,13 +33,13 @@ class WelcomeScreen extends StatelessWidget {
               Text(
                 "Doctor on Tips",
                 style: TextStyle(
-                    color: Colors.lightBlueAccent,
+                    color: const Color.fromARGB(255, 4, 115, 205),
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1,
                     wordSpacing: 2),
               ),
-                            SizedBox(height: 10),
+              SizedBox(height: 10),
               Text(
                 "Doctor appoinment on your fingertips",
                 style: TextStyle(
@@ -47,6 +49,58 @@ class WelcomeScreen extends StatelessWidget {
                     letterSpacing: 1,
                     wordSpacing: 2),
               ),
+              SizedBox(height: 60),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Material(
+                      color: const Color.fromARGB(255, 4, 115, 205),
+                      borderRadius: BorderRadius.circular(10),
+                      child: InkWell(
+                        onTap: () => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()))
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 15, horizontal: 40),
+                          child: Text(
+                            "Log In",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      )),
+                  Material(
+                      color: const Color.fromARGB(255, 4, 115, 205),
+                      borderRadius: BorderRadius.circular(10),
+                      child: InkWell(
+                        onTap: () => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => RegisterScreen()))
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 15, horizontal: 40),
+                          child: Text(
+                            "Register",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ))
+                ],
+              )
             ],
           )),
     );
