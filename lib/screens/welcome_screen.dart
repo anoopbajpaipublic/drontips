@@ -1,5 +1,6 @@
 import 'package:drontips/screens/login_screen.dart';
 import 'package:drontips/screens/register_screen.dart';
+import 'package:drontips/widgets/navbar_root.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -18,7 +19,10 @@ class WelcomeScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => NavBar()));
+                    },
                     child: Text(
                       "SKIP",
                       style: TextStyle(color: Colors.black, fontSize: 20),
